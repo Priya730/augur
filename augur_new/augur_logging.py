@@ -19,6 +19,10 @@ import tasks.facade_tasks
 import tasks.issue_tasks
 import tasks.start_tasks
 
+#TODO:
+# Turn off debug mode
+# specify subfolder
+# more general loggers for tasks
 
 root_augur_dir = ''.join(os.getcwd().partition("augur/")[:2])
 
