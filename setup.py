@@ -34,6 +34,7 @@ setup(
     ],
     install_requires=[
         "wheel",
+        "alembic==1.8.1",
         "coloredlogs==15.0",
         "Beaker==1.11.0",
         "SQLAlchemy==1.3.23",
@@ -69,8 +70,12 @@ setup(
         "boto3==1.17.57",
         "toml",
         "mistune==0.8.4",
-        "pyYaml", 
-        "urllib3==1.26.9"
+        "pyYaml",
+        "redis==4.3.3",
+        "XlsxWriter==1.3.7",
+        "celery==5.2.7",
+        "httpx==0.23.0",
+        "tornado==6.1" # added because it sometimes errors when tornado is not 6.1 even though nothing we install depends on it
     ],
     extras_require={
         "dev": [
@@ -87,7 +92,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "augur=augur.cli._multicommand:run"
+            "augur=cli._multicommand:run"
         ],
     }
 )
