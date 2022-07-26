@@ -42,14 +42,8 @@ from augur.tasks.util.task_session import *
 
 from augur.tasks.git.util.facade_worker.facade_worker.facade00mainprogram import *
 
-from augur.application.logs import TaskLogConfig
-
-
 #Have one log file for facade_tasks
 # facadeLogger = logging.getLogger(__name__)
-
-
-
 
 
 """
@@ -63,17 +57,6 @@ config = AugurConfig(config_db_session)
 logs_directory = config.get_value("Logging", "logs_directory")
 if logs_directory is None:
     raise Exception('logs_directory not specified in config.')
-
-
-#Load logging config once at task definition
-@after_setup_logger.connect
-def setup_loggers(*args,**kwargs):
-    #load config
-    loggingConfig = TaskLogConfig(base_log_dir=logs_directory)
-
-    
-    
-
 
 
 #enable celery multithreading

@@ -65,6 +65,9 @@ echo "Schema successfully created!"
 
 scripts/install/config.sh $target
 
+scripts/install/api_key.sh
+scripts/install/nltk_dictionaries.sh
+
 echo "**********************************"
 echo "***** INSTALLATION COMPLETE *****"
 echo "**********************************"
@@ -98,8 +101,7 @@ echo "**********************************"
 # fi
 
 # scripts/install/frontend.sh
-# scripts/install/api_key.sh
-# scripts/install/nltk_dictionaries.sh
+
 
 # if [[ -e augur.config.json || -e $HOME/.augur/augur.config.json ]]; then
 #   if [[ -e augur.config.json ]]; then
